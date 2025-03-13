@@ -12,7 +12,6 @@
 }
 
 .red{
-    background-image: url(./img/petalospng.png);
     background-color: red;
 }
 
@@ -22,7 +21,8 @@
 
 
 .green{
-    background-color: green;
+    background-image: url(./img/muros.avif);
+    background-size:cover ;
 }
 
 
@@ -31,5 +31,38 @@
 }
 
 .white{
-    background-color: white;
+    background-image: url(./img/petalospng.png);
+    background-size: cover;
+}
+
+.principe{
+    background-image: url(./img/santjordi.png);
+    background-size: cover;
+
+}
+
+.dragonAmarillo{
+    background-image: url(./img/dragonamarillopng.webp);
+    background-size: cover;
+
+}
+
+.dragonAzul{
+    background-image: url(./img/dragonazulpng.webp);
+    background-size: cover;
+}
+
+.dragonLila{
+    background-image: url(./img/dragonlilapng.webp);
+    background-size: cover;
+}
+
+.dragonVerde{
+    background-image: url(./img/dragonverdepng.webp);
+    background-size: cover;
+}
+
+.dragonAsustado{
+    background-image: url(./img/dragon1-removebg-preview.png);
+    background-size: cover;
 }
