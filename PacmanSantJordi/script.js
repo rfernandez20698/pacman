@@ -14,10 +14,11 @@ const grid = document.querySelector(".grid");
 // 2 - guarida 
 // 3 - rosa superpoder 
 // 4 - buit 
+//5 - rosa
 
 const layout = [
     0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0,
+    0, 0, 3, 3, 3, 3, 3, 3, , 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
     0, 0, 3, 0, 1, 1, 0, 3, 0, 0, 0, 3, 0, 1, 1, 1, 0, 3, 0, 1, 1, 1, 0, 3, 3, 3, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0,
@@ -56,16 +57,17 @@ function createBoard(){
     for(let i=0; i < layout.length; i++){
         const square = document.createElement('div')
         if(layout[i]==0){
-            square.classList.add("red")
+            square.classList.add("murs")
         }else if(layout[i]==1){
             square.classList.add("green")
         }else if(layout[i]==2){
-            square.classList.add("blue")
+            square.classList.add("guarida")
         }else if(layout[i]==3){
-            square.classList.add("white")
+            square.classList.add("petalos")
         }else if(layout[i]==4){
             square.classList.add("pink")
-        }    
+        
+        }   
         
             grid.appendChild(square);
             squares.push(square)
@@ -83,18 +85,22 @@ function movePrincipe(e){
     squares[posicioPrincep].classList.remove("principe")
     switch(e.key){
         case 'ArrowLeft': 
-            posicioPrincep -= 1
-            break
+            if (!squares [posicioPrincep -1].classList.contains('murs') && !squares[posicioPrincep -1].classList.contains('guarida'))    
+            posicioPrincep-=1
+            break;
     
         case 'ArrowRight': 
+        if (!squares [posicioPrincep +1].classList.contains('murs') && !squares[posicioPrincep +1].classList.contains('guarida'))
             posicioPrincep += 1
             break
     
         case 'ArrowUp': 
-            posicioPrincep -= 28
-            break
+        if (!squares [posicioPrincep -28].classList.contains('murs') && !squares[posicioPrincep -28].classList.contains('guarida'))
+           posicioPrincep-=28
+        break
 
         case 'ArrowDown': 
+        if (!squares [posicioPrincep +28].classList.contains('murs') && !squares[posicioPrincep +28].classList.contains('guarida'))
             posicioPrincep += 28
             break
     }

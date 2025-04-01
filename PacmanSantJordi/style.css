@@ -11,12 +11,12 @@
     height: 20px;
 }
 
-.red{
-    background-color: red;
+.murs{
+    background-image: url(./img/muros.png);
 }
 
-.blue{
-    background-color: blue;
+.guarida{
+    background-color: rgb(193, 168, 204);
 }
 
 
@@ -30,8 +30,8 @@
     background-color: grey;
 }
 
-.white{
-    background-image: url(./img/petalospng.png);
+.petalos{
+    background-image: url(./img/petalopng.png);
     background-size: cover;
 }
 
