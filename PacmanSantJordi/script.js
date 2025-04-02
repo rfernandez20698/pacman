@@ -18,33 +18,33 @@ const grid = document.querySelector(".grid");
 
 const layout = [
     0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 3, 3, 3, 3, 3, 3, , 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0,
+    0, 0, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
     0, 0, 3, 0, 1, 1, 0, 3, 0, 0, 0, 3, 0, 1, 1, 1, 0, 3, 0, 1, 1, 1, 0, 3, 3, 3, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0,
-    0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4,
+    0, 0, 3, 3, 4, 3, 3, 3, 0, 0, 0, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 3, 0, 3, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 1, 1, 1, 1, 0, 0, 0, 0, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
-    4, 4, 4, 4, 4, 4, 4, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1, 1, 0, 4, 0, 0,
+    1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 1, 1, 1, 1, 1, 1, 1, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
+    0, 0, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0,
     0, 0, 3, 0, 1, 1, 0, 3, 0, 1, 1, 1, 1, 0, 3, 0, 1, 1, 1, 1, 0, 3, 0, 1, 0, 3, 0, 0,
-    0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0,
+    0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0,
     0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
 
 ]
 
@@ -59,13 +59,13 @@ function createBoard(){
         if(layout[i]==0){
             square.classList.add("murs")
         }else if(layout[i]==1){
-            square.classList.add("green")
+            square.classList.add("huecos")
         }else if(layout[i]==2){
             square.classList.add("guarida")
         }else if(layout[i]==3){
             square.classList.add("petalos")
         }else if(layout[i]==4){
-            square.classList.add("pink")
+            square.classList.add("rosa")
         
         }   
         
@@ -85,24 +85,36 @@ function movePrincipe(e){
     squares[posicioPrincep].classList.remove("principe")
     switch(e.key){
         case 'ArrowLeft': 
-            if (!squares [posicioPrincep -1].classList.contains('murs') && !squares[posicioPrincep -1].classList.contains('guarida'))    
-            posicioPrincep-=1
-            break;
+            if (!squares [posicioPrincep -1].classList.contains('murs') && 
+            !squares[posicioPrincep -1].classList.contains('guarida'))   {
+            posicioPrincep-=1 
+            } 
+            
+            if (squares[posicioPrincep - 1] === squares[392]){
+                posicioPrincep = 195
+            }
+            break
     
         case 'ArrowRight': 
-        if (!squares [posicioPrincep +1].classList.contains('murs') && !squares[posicioPrincep +1].classList.contains('guarida'))
+        if (!squares [posicioPrincep +1].classList.contains('murs') &&
+            !squares[posicioPrincep +1].classList.contains('guarida')){
             posicioPrincep += 1
+            }
+
+            if (squares[posicioPrincep + 1] === squares [195]){
+                posicioPrincep = 392
+            }
             break
     
         case 'ArrowUp': 
         if (!squares [posicioPrincep -28].classList.contains('murs') && !squares[posicioPrincep -28].classList.contains('guarida'))
            posicioPrincep-=28
-        break
+        break;
 
         case 'ArrowDown': 
         if (!squares [posicioPrincep +28].classList.contains('murs') && !squares[posicioPrincep +28].classList.contains('guarida'))
             posicioPrincep += 28
-            break
+            break;
     }
     squares[posicioPrincep].classList.add("principe")
 

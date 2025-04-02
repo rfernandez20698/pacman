@@ -25,9 +25,13 @@
     background-size:cover ;
 }
 
+.rosa{
+    background-image: url(./img/rosanueva.png);
+    background-size: cover;
+}
 
-.grey{
-    background-color: grey;
+.huecos{
+    background-color: azure;
 }
 
 .petalos{
