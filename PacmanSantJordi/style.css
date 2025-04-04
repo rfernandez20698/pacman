@@ -45,23 +45,28 @@
 
 }
 
-.dragonAmarillo{
+.caballo{
+    background-image: url(./img/caballo.png);
+    background-size: cover;
+}
+
+.dragon1{
     background-image: url(./img/dragonamarillopng.webp);
     background-size: cover;
 
 }
 
-.dragonAzul{
+.dragon2{
     background-image: url(./img/dragonazulpng.webp);
     background-size: cover;
 }
 
-.dragonLila{
+.dragon3{
     background-image: url(./img/dragonlilapng.webp);
     background-size: cover;
 }
 
-.dragonVerde{
+.dragon4{
     background-image: url(./img/dragonverdepng.webp);
     background-size: cover;
 }
@@ -70,3 +75,4 @@
     background-image: url(./img/dragon1-removebg-preview.png);
     background-size: cover;
 }
+

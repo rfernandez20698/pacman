@@ -14,12 +14,12 @@ const grid = document.querySelector(".grid");
 // 2 - guarida 
 // 3 - rosa superpoder 
 // 4 - buit 
-//5 - rosa
+//5 - caballo
 
 const layout = [
     0, 0, 0 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0,
-    0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
+    0, 0, 3, 0, 0, 0, 0, 5, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0,
     0, 0, 3, 0, 1, 1, 0, 3, 0, 0, 0, 3, 0, 1, 1, 1, 0, 3, 0, 1, 1, 1, 0, 3, 3, 3, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 0, 3, 0, 0,
     0, 0, 3, 3, 4, 3, 3, 3, 0, 0, 0, 3, 3, 3, 3, 4, 3, 3, 3, 4, 3, 3, 3, 3, 0, 3, 0, 0,
@@ -42,9 +42,9 @@ const layout = [
     0, 0, 3, 0, 1, 1, 0, 3, 0, 1, 1, 1, 1, 0, 3, 0, 1, 1, 1, 1, 0, 3, 0, 1, 0, 3, 0, 0,
     0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0,
     0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 
 ]
 
@@ -67,7 +67,9 @@ function createBoard(){
         }else if(layout[i]==4){
             square.classList.add("rosa")
         
-        }   
+        }else if(layout[i]==5){
+            square.classList.add("caballo")
+        }
         
             grid.appendChild(square);
             squares.push(square)
@@ -120,12 +122,9 @@ function movePrincipe(e){
 
    cogerPetalos()
     rosaCogida()
+    cogerCaballo()
     // checkForWin()
     //checkForgameOver()
-
-
-
-
 
 
 }
@@ -151,6 +150,44 @@ if (squares[posicioPrincep].classList.contains('rosa')){
 
 }
 }
+
+
+function cogerCaballo(){
+
+   if (squares[posicioPrincep].classList.contains('caballo')){
+    score+=5
+    scoreDisplay.innerHTML=score
+    squares[posicioPrincep].classList.remove('caballo')
+
+   } 
+
+   
+}
+
+
+    class Drac {
+        constructor(className, startIndex, speed){
+            this.className=className
+            this.startIndex=startIndex
+            this.speed=speed
+            this.currentIndex=startIndex
+            this.isScared=false 
+            this.timerId=NaN
+
+        }
+    }
+
+    const dracs = [
+        new Drac('dragon1', 350, 250),
+        new Drac('dragon2', 405, 250),
+        new Drac('dragon3', 402, 250),
+        new Drac('dragon4', 375, 300), 
+    
+
+    ]
+    
+    console.log (dracs)
+
 
 
 
