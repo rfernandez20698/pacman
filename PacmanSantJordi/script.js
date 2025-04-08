@@ -49,7 +49,7 @@ const layout = [
 ]
 
 
-let squares = []
+let squares = [];
 
 
 //crear tablero 
@@ -155,7 +155,7 @@ if (squares[posicioPrincep].classList.contains('rosa')){
 function cogerCaballo(){
 
    if (squares[posicioPrincep].classList.contains('caballo')){
-    score+=5
+    score+=6
     scoreDisplay.innerHTML=score
     squares[posicioPrincep].classList.remove('caballo')
 
@@ -178,7 +178,7 @@ function cogerCaballo(){
     }
 
     const dracs = [
-        new Drac('dragon1', 350, 250),
+        new Drac('dragon1', 378, 250),
         new Drac('dragon2', 405, 250),
         new Drac('dragon3', 402, 250),
         new Drac('dragon4', 375, 300), 
@@ -186,7 +186,27 @@ function cogerCaballo(){
 
     ]
     
-    console.log (dracs)
+    //console.log (dracs)
+
+    dracs.forEach(drac=>squares[drac.currentIndex].classList.add(drac.className, 'drac'))
+
+    dracs.forEach(drac=>moveDrac(drac))
+
+    function moveDrac(drac){
+    
+        const directions =[-1,1, width, -width]
+        let direction = directions[Math.floor(Math.random()*directions.length)]
+        
+        if(
+            !squares [drac.currentIndex+direction].classList.contains('murs') &&  
+            !squares [drac.currentIndex+direction].classList.contains('drac')
+
+        ){
+            
+
+        }
+
+    }
 
 
 
