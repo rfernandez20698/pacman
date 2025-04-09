@@ -30,9 +30,9 @@ const layout = [
     0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 0, 0, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0,
     1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -148,7 +148,15 @@ if (squares[posicioPrincep].classList.contains('rosa')){
     scoreDisplay.innerHTML=score
     squares[posicioPrincep].classList.remove('rosa')
 
+    espantaDracs(true)
+    setTimeout(()=>espantaDracs(false),10000)
+    
 }
+
+}
+
+function espantaDracs(scaredDrac){
+    dracs.forEach(drac=> drac.isScared=scaredDrac)
 }
 
 
@@ -159,7 +167,8 @@ function cogerCaballo(){
     scoreDisplay.innerHTML=score
     squares[posicioPrincep].classList.remove('caballo')
 
-   } 
+   }
+
 
    
 }
@@ -178,10 +187,10 @@ function cogerCaballo(){
     }
 
     const dracs = [
-        new Drac('dragon1', 378, 250),
-        new Drac('dragon2', 405, 250),
-        new Drac('dragon3', 402, 250),
-        new Drac('dragon4', 375, 300), 
+        new Drac('dragon1', 378, 550),
+        new Drac('dragon2', 405, 550),
+        new Drac('dragon3', 402, 550),
+        new Drac('dragon4', 375, 500), 
     
 
     ]
@@ -196,21 +205,27 @@ function cogerCaballo(){
     
         const directions =[-1,1, width, -width]
         let direction = directions[Math.floor(Math.random()*directions.length)]
-        
+
+    drac.timerId=setInterval(function (){
         if(
             !squares [drac.currentIndex+direction].classList.contains('murs') &&  
             !squares [drac.currentIndex+direction].classList.contains('drac')
 
         ){
-            
+          squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'dragonAsustado') 
+          drac.currentIndex+=direction
+          squares[drac.currentIndex].classList.add(drac.className, 'drac')
 
-        }
+        }else direction=directions[Math.floor(Math.random()*directions.length)]
 
+
+    if(drac.isScared){
+    squares[drac.currentIndex].classList.add(drac.className, 'dragonAsustado')
+    }    
+
+    }, drac.speed
+    )    
     }
-
-
-
-
 
 
 
