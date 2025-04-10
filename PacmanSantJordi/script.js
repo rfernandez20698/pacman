@@ -221,7 +221,17 @@ function cogerCaballo(){
 
     if(drac.isScared){
     squares[drac.currentIndex].classList.add(drac.className, 'dragonAsustado')
-    }    
+    }
+    
+    if(drac.isScared && squares[drac.currentIndex].classList.contains ('principe')){
+        score+=100
+        scoreDisplay.innerHTML =score
+        squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'dragonAsustado')
+        drac.currentIndex=drac.startIndex
+        drac.isScared=false
+        squares[drac.currentIndex].classList.add(drac.className, 'drac')
+
+    }
 
     }, drac.speed
     )    
